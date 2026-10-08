@@ -10,6 +10,11 @@ namespace ITSupportTicket
             dtpDate.Value = DateTime.Now;
         }
 
+        private void MainForm_Load(object? sender, EventArgs e)
+        {
+            txtTicketId.Text = GenerateTicketId();
+        }
+
         // --- Tải ảnh lỗi ---
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
@@ -18,18 +23,27 @@ namespace ITSupportTicket
             dlg.Filter = "Hình ảnh|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                _selectedImagePath = dlg.FileName;
-                try
-                {
-                    using var fs = new System.IO.FileStream(_selectedImagePath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-                    var bmp = new Bitmap(fs);
-                    if (picError.Image != null) picError.Image.Dispose();
-                    picError.Image = bmp;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Không thể tải ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                LoadErrorImage(dlg.FileName);
+            }
+        }
+
+        private bool LoadErrorImage(string path)
+        {
+            try
+            {
+                // Sao chép ảnh để đóng stream mà không khóa tệp gốc.
+                using var fs = new System.IO.FileStream(path, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                using var source = Image.FromStream(fs);
+                var bmp = new Bitmap(source);
+                picError.Image?.Dispose();
+                picError.Image = bmp;
+                _selectedImagePath = path;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, $"Không thể tải ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 
@@ -38,7 +52,7 @@ namespace ITSupportTicket
         {
             if (string.IsNullOrWhiteSpace(txtRequestor.Text))
             {
-                MessageBox.Show("Vui lòng nhập Người yêu cầu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Vui lòng nhập Người yêu cầu.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtRequestor.Focus();
                 return;
             }
@@ -63,7 +77,7 @@ namespace ITSupportTicket
                 $"Thiết bị ảnh hưởng: {deviceList}\n" +
                 $"Ảnh đính kèm : {(_selectedImagePath != null ? System.IO.Path.GetFileName(_selectedImagePath) : "Không có")}";
 
-            MessageBox.Show(summary, "📋 Tóm tắt phiếu yêu cầu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(this, summary, "📋 Tóm tắt phiếu yêu cầu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // --- Nhập lại ---

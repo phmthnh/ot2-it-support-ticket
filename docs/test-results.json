@@ -1,0 +1,72 @@
+{
+  "exercise": "2",
+  "culture": "vi-VN",
+  "results": [
+    {
+      "name": "ticket_id",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "stretch_image",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "missing_requestor",
+      "pass": true,
+      "actual": "OK\r\n\r\nVui lòng nhập Người yêu cầu."
+    },
+    {
+      "name": "load_image",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "image_file_unlocked",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "image_renders_after_stream_closed",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "summary",
+      "pass": true,
+      "actual": "OK\r\n\r\nMã phiếu    : TK-20261008143605\nNgười yêu cầu: Phạm Tuấn Thành\nNgày ghi nhận: 08/10/2026\nMức độ ưu tiên: Khẩn cấp\nLoại sự cố   : Mạng\nThiết bị ảnh hưởng: Laptop\nẢnh đính kèm : test-image.png"
+    },
+    {
+      "name": "summary_choices",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "corrupt_image_handled",
+      "pass": true,
+      "actual": "OK\r\n\r\nKhông thể tải ảnh: Parameter is not valid."
+    },
+    {
+      "name": "reset",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "file_picker_filename_control",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "open_dialog_loads_png",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "open_dialog_releases_file",
+      "pass": true,
+      "actual": null
+    }
+  ],
+  "date": "2026-10-08"
+}

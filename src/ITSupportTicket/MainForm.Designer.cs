@@ -8,6 +8,8 @@ namespace ITSupportTicket
         {
             if (disposing && (components != null))
                 components.Dispose();
+            if (disposing)
+                picError?.Image?.Dispose();
             base.Dispose(disposing);
         }
 
@@ -266,7 +268,7 @@ namespace ITSupportTicket
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BT2 - Form Tiếp nhận & Phân loại sự cố IT";
-            this.Load += new System.EventHandler((s, e) => { txtTicketId.Text = GenerateTicketId(); });
+            this.Load += new System.EventHandler(this.MainForm_Load);
 
             this.grpTicket.ResumeLayout(false);
             this.grpTicket.PerformLayout();
