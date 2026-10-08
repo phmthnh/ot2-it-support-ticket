@@ -4,9 +4,35 @@
 
 - **Họ và tên:** Phạm Tuấn Thành
 - **Mã số sinh viên:** 24810320264
-- **Lớp:** [Chờ xác nhận lớp]
+- **Lớp:** D19QTANM1
 - **Tên môn học:** Lập trình C# / Windows Forms
 - **Tên bài tập:** Bài 2 — Form Tiếp nhận & Phân loại sự cố IT
+
+---
+
+## KẾT QUẢ THỰC HÀNH
+
+Ảnh chụp từ ứng dụng chạy thực tế trên Windows trong lần kiểm thử ngày **08/10/2026**.
+
+### 1. Ảnh màn hình Giao diện chính
+
+![Giao diện chính](./screenshots/main_ui.png)
+
+Form tiếp nhận phiếu hỗ trợ với ngày ghi nhận, mức ưu tiên, loại sự cố, thiết bị và ảnh lỗi.
+
+### 2. Ảnh màn hình Chức năng thực thi / Kết quả
+
+![Thực thi chức năng](./screenshots/execution_result.png)
+
+Gửi phiếu của Phạm Tuấn Thành với mức Khẩn cấp, sự cố Mạng, thiết bị Laptop và ảnh đính kèm: hộp thoại hiển thị bản tóm tắt đầy đủ.
+
+### 3. Ảnh màn hình Kiểm tra lỗi (Validation)
+
+![Kiểm tra lỗi](./screenshots/validation_error.png)
+
+Chưa nhập người yêu cầu và bấm Gửi yêu cầu: chương trình hiển thị cảnh báo thiếu thông tin.
+
+---
 
 ## MÔ TẢ BÀI TẬP
 
@@ -67,22 +93,6 @@ Xem [bảng kiểm thử](./docs/TESTING.md) và [kết quả chạy](./docs/tes
 
 Ảnh là tùy chọn. Mã phiếu được sinh theo thời gian; chương trình chỉ hiển thị tóm tắt, chưa gửi tới dịch vụ ngoài.
 
-## KẾT QUẢ THỰC HÀNH
-
-### 1. Giao diện chính
-
-![Giao diện chính](./screenshots/main_ui.png)
-
-### 2. Chức năng thực thi / Kết quả
-
-![Thực thi chức năng](./screenshots/execution_result.png)
-
-### 3. Kiểm tra lỗi / Validation
-
-![Kiểm tra lỗi](./screenshots/validation_error.png)
-
-Thư mục `screenshots/` dùng để lưu ảnh chạy thực tế. Giữ đúng tên ảnh trên để README hiển thị trực tiếp trên GitHub.
-
 ## QUY TRÌNH NỘP VÀ PUSH
 
 Repo đã được khởi tạo trên nhánh `main` và liên kết `origin`. Sau khi thay đổi code, README hoặc screenshot, chạy:
@@ -101,9 +111,9 @@ git push -u origin main
 ## CHECKLIST TRƯỚC KHI NỘP
 
 - [x] README có họ tên và MSSV.
-- [ ] README đã điền lớp thật.
-- [ ] `screenshots/` có đủ 3 ảnh chạy thực tế.
-- [ ] Ảnh hiển thị trực tiếp trên trang chính GitHub.
+- [x] README đã điền lớp D19QTANM1.
+- [x] `screenshots/` có đủ 3 ảnh chạy thực tế.
+- [x] Ảnh hiển thị trực tiếp trên trang chính GitHub.
 - [x] `.gitignore` loại tệp build và cấu hình cá nhân của Visual Studio.
 - [x] Repository Public.
-- [x] Mã nguồn bản sửa và tài liệu đã commit/push lên nhánh `main`.
+- [x] Mã nguồn, README và ảnh đã commit/push lên nhánh `main`.
